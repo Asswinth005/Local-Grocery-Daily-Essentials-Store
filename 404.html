@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | GreenCart | Fresh Groceries Delivered</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+
+    <meta name="description" content="This page has been picked clean. The page you're looking for doesn't exist or has been moved. Let's get you back to the fresh aisle.">
+
+    <!-- Tailwind CSS (Local with CDN fallback) -->
+    <script src="tailwind.js"></script>
+    <script>
+        if (typeof tailwind === 'undefined') {
+            document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': 'rgba(var(--color-rgb-primary), <alpha-value>)',
+                        'brand-light': 'rgba(var(--color-rgb-light), <alpha-value>)',
+                        'brand-dark': 'rgba(var(--color-rgb-dark), <alpha-value>)',
+                        'brand-bright': 'rgba(var(--color-rgb-bright), <alpha-value>)',
+                        'brand-accent': 'rgba(var(--color-rgb-accent), <alpha-value>)',
+                        'bg-warm': 'var(--color-bg-warm)',
+                        'neutral-dark': 'var(--color-text-dark)',
+                        'neutral-light': '#E8F0E8',
+                        'dark-bg': '#0B1410',
+                        'dark-card': '#14201A',
+                        'dark-surface': '#1D2C24',
+                    },
+                    fontFamily: {
+                        'sans': ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        'display': ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.4s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
+                        'forge-glow': 'forgeGlow 3s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 14s linear infinite',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        slideUp: { '0%': { transform: 'translateY(30px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        floatSlow: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
+                        pulseSoft: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
+                        bounceGentle: { '0%,100%': { transform: 'translateY(0) rotate(0deg)' }, '50%': { transform: 'translateY(-12px) rotate(-4deg)' } },
+                        forgeGlow: { '0%,100%': { boxShadow: '0 0 0 0 rgba(46,125,50,0.4)' }, '50%': { boxShadow: '0 0 50px 10px rgba(46,125,50,0.2)' } },
+                        spinSlow: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        :root, [data-theme="market-fresh"] {
+            --color-primary: #2E7D32;
+            --color-primary-light: #66BB6A;
+            --color-primary-dark: #1B5E20;
+            --color-primary-bright: #A5D6A7;
+            --color-accent: #F9A825;
+            --color-bg-warm: #F8FBF7;
+            --color-text-dark: #10241A;
+            --color-rgb-primary: 46, 125, 50;
+            --color-rgb-light: 102, 187, 106;
+            --color-rgb-dark: 27, 94, 32;
+            --color-rgb-bright: 165, 214, 167;
+            --color-rgb-accent: 249, 168, 37;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            background-color: var(--color-bg-warm);
+            color: var(--color-text-dark);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .dark body { background-color: #0B1410; color: #E5EFE7; }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .green-gradient-text {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-primary-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .green-gradient-text {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .text-brand { color: var(--color-primary-bright) !important; }
+        .dark .border-brand { border-color: var(--color-primary-bright) !important; }
+        .dark .bg-brand { background-color: var(--color-primary-bright) !important; }
+
+        .dark nav {
+            background-color: rgba(20, 32, 26, 0.92) !important;
+        }
+
+        /* Toggle buttons */
+        .toggle-btn {
+            width: 40px; height: 40px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(var(--color-rgb-primary), 0.12);
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.2);
+            cursor: pointer; font-size: 1rem; font-weight: bold;
+        }
+        .dark .toggle-btn {
+            background: rgba(var(--color-rgb-bright), 0.12);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.2);
+        }
+        .toggle-btn:hover { transform: scale(1.08); background: var(--color-primary); color: #FFFFFF; }
+        .dark .toggle-btn:hover { background: var(--color-primary-bright); color: #0B1410; }
+
+        /* Primary button */
+        .btn-brand {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: #FFFFFF; padding: 0.8rem 1.8rem;
+            font-weight: 700; border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(var(--color-rgb-primary), 0.3);
+            border: none; cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .dark .btn-brand {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary) 100%);
+            color: #0B1410;
+        }
+        .btn-brand:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(var(--color-rgb-primary), 0.4); }
+        .dark .btn-brand:hover { box-shadow: 0 10px 25px rgba(var(--color-rgb-bright), 0.4); }
+
+        .btn-outline-brand {
+            border: 1.5px solid var(--color-primary); color: var(--color-primary);
+            background: transparent; border-radius: 50px; font-weight: 600;
+            padding: 0.75rem 1.6rem;
+            transition: all 0.3s ease;
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+            cursor: pointer;
+        }
+        .dark .btn-outline-brand { border-color: var(--color-primary-bright); color: var(--color-primary-bright); }
+        .btn-outline-brand:hover { background: var(--color-primary); color: #FFFFFF; transform: translateY(-2px); }
+        .dark .btn-outline-brand:hover { background: var(--color-primary-bright); color: #0B1410; }
+
+        .nav-item {
+            position: relative; padding: 0.5rem 0;
+            font-weight: 600; font-size: 0.9rem;
+            color: var(--color-text-dark);
+            transition: color 0.3s ease; cursor: pointer;
+            white-space: nowrap;
+        }
+        .dark .nav-item { color: #E5EFE7; }
+        .nav-item:hover { color: var(--color-primary); }
+        .dark .nav-item:hover { color: var(--color-primary-bright); }
+        .nav-item::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            transition: width 0.3s ease;
+        }
+        .nav-item.active::after, .nav-item:hover::after { width: 100%; }
+        .nav-item.active { color: var(--color-primary); }
+        .dark .nav-item.active { color: var(--color-primary-bright); }
+        [dir="rtl"] .nav-item::after { left: auto; right: 0; }
+
+        .dropdown-menu { display: none; }
+        .group:hover .dropdown-menu,
+        .group:focus-within .dropdown-menu { display: block; }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+
+        /* ---------- 404 PAGE UNIQUE STYLES ---------- */
+
+        /* 404 number gradient */
+        .error-number-gradient {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-primary-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 8px 24px rgba(46,125,50,0.25));
+        }
+        .dark .error-number-gradient {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 8px 24px rgba(165,214,167,0.25));
+        }
+
+        /* Basket illustration */
+        .floating-basket {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        .basket-icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Empty basket / dotted outline effect */
+        .empty-basket-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px dashed rgba(var(--color-rgb-primary), 0.35);
+            animation: spinSlow 18s linear infinite;
+        }
+        .dark .empty-basket-ring {
+            border-color: rgba(var(--color-rgb-bright), 0.35);
+        }
+
+        .accent-line {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            margin: 1rem auto;
+            border-radius: 3px;
+        }
+
+        /* Floating leaf particles */
+        .leaf-particle {
+            position: absolute;
+            color: rgba(var(--color-rgb-primary), 0.25);
+            animation: floatSlow 7s ease-in-out infinite;
+        }
+        .dark .leaf-particle { color: rgba(var(--color-rgb-bright), 0.2); }
+
+        /* RTL fixes */
+        [dir="rtl"] .fa-arrow-right { transform: scaleX(-1); }
+        [dir="rtl"] .accent-line { margin: 1rem auto; }
+
+        /* mobile menu */
+        #mobile-menu:not(.open) { display: none; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .mobile-menu.open { max-height: 500px; }
+    </style>
+</head>
+
+<body class="bg-bg-warm dark:bg-dark-bg text-neutral-dark dark:text-gray-200">
+
+    <!-- ========== TOP MINIMAL BAR (Logo + Theme/RTL Controls) ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group shrink-0" dir="ltr">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-brand-light to-brand rounded-2xl flex items-center justify-center shadow-md group-hover:rotate-6 transition">
+                    <i class="fas fa-basket-shopping text-white text-lg"></i>
+                </div>
+                <div class="leading-none">
+                    <span class="text-lg sm:text-xl font-display font-extrabold tracking-tight text-neutral-dark dark:text-white">
+                        Green<span class="green-gradient-text">Cart</span>
+                    </span>
+                    <p class="text-[9px] font-semibold tracking-[0.2em] text-brand dark:text-brand-bright uppercase mt-1">Fresh Daily Essentials</p>
+                </div>
+            </a>
+
+            <!-- Dark / Light Mode & RTL Controls -->
+            <div class="flex items-center gap-2.5 bg-white/80 dark:bg-[#14201A]/80 backdrop-blur-xl px-3 py-1.5 rounded-full border border-brand/20 dark:border-brand-bright/20 shadow-sm">
+                <button id="theme-toggle" class="toggle-btn !w-9 !h-9 text-sm" title="Dark / Light">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 text-sm" title="RTL / LTR">⇄</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== 404 MAIN CONTENT ========== -->
+    <main class="min-h-screen flex items-center justify-center pt-24 pb-12 px-6 relative overflow-hidden">
+        <!-- Ambient glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-0 w-[400px] h-[400px] rounded-full bg-amber-400/8 blur-3xl pointer-events-none"></div>
+
+        <!-- Floating leaves (decorative) -->
+        <i class="fas fa-leaf leaf-particle" style="top: 18%; left: 12%; font-size: 22px; animation-delay: 0s;"></i>
+        <i class="fas fa-seedling leaf-particle" style="top: 65%; left: 8%; font-size: 18px; animation-delay: 1.5s;"></i>
+        <i class="fas fa-leaf leaf-particle" style="top: 28%; right: 10%; font-size: 26px; animation-delay: 2.5s;"></i>
+        <i class="fas fa-seedling leaf-particle" style="top: 72%; right: 14%; font-size: 20px; animation-delay: 3.5s;"></i>
+
+        <div class="max-w-2xl mx-auto text-center animate-fade-in-up relative z-10">
+            <!-- Animated Basket Icon -->
+            <div class="mb-6 floating-basket">
+                <div class="w-28 h-28 md:w-36 md:h-36 rounded-full border-8 border-brand/20 flex items-center justify-center mx-auto relative bg-white dark:bg-[#14201A] animate-forge-glow">
+                    <div class="basket-icon-wrapper">
+                        <i class="fas fa-basket-shopping text-brand dark:text-brand-bright text-5xl md:text-6xl" style="display:inline-block;"></i>
+                        <div class="empty-basket-ring"></div>
+                    </div>
+                    <div class="absolute inset-0 rounded-full border-4 border-brand/20 animate-ping opacity-50"></div>
+                </div>
+            </div>
+
+            <!-- Large 404 Number -->
+            <div class="mb-4">
+                <span class="text-[110px] md:text-[170px] font-display font-extrabold error-number-gradient leading-none tracking-tighter">404</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-2xl md:text-3xl font-display font-bold text-neutral-dark dark:text-white mb-3">
+                This Aisle Is Out of Stock
+            </h1>
+
+            <!-- Divider -->
+            <div class="accent-line"></div>
+
+            <!-- Message -->
+            <p class="text-base md:text-lg text-neutral-dark dark:text-gray-300 mb-8 leading-relaxed max-w-md mx-auto opacity-90">
+                The page you're looking for has been picked clean, moved to another aisle, or never made it to the shelf. Let's get you back to the fresh stuff.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 justify-center mb-12">
+                <a href="index.html" class="btn-brand">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="products.html" class="btn-outline-brand">
+                    <i class="fas fa-basket-shopping"></i> Shop Fresh
+                </a>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="border-t border-brand/20 dark:border-brand-bright/20 pt-8">
+                <p class="text-sm text-neutral-dark dark:text-gray-400 mb-4 opacity-80">
+                    <i class="fas fa-seedling text-brand dark:text-brand-bright mr-2"></i> Explore GreenCart
+                </p>
+                <div class="flex flex-wrap gap-3 justify-center items-center">
+                    <a href="products.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Products</a>
+                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <a href="offers.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Offers</a>
+                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <a href="deals-hub.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Deals Hub</a>
+                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <a href="delivery-info.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Delivery Info</a>
+                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <a href="about.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">About</a>
+                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <a href="contact.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Contact</a>
+                </div>
+            </div>
+
+            <!-- Fun Fact Note -->
+            <div class="mt-8 text-xs text-neutral-dark/60 dark:text-gray-500">
+                <i class="fas fa-lightbulb mr-1 text-brand dark:text-brand-bright"></i> Pro tip: Even the freshest carts sometimes take a wrong turn. Try the search or head back to the homepage.
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== SCRIPT ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ---------- THEME TOGGLE ----------
+            const themeBtn = document.getElementById('theme-toggle');
+            function setTheme(isDark) {
+                document.documentElement.classList.toggle('dark', isDark);
+                document.documentElement.setAttribute('data-theme', 'market-fresh');
+                if (themeBtn) {
+                    const moon = themeBtn.querySelector('.fa-moon');
+                    const sun = themeBtn.querySelector('.fa-sun');
+                    if (isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
+                    else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
+                }
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
+            setTheme(localStorage.getItem('theme') === 'dark');
+            themeBtn?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+
+            // ---------- RTL TOGGLE ----------
+            const rtlBtn = document.getElementById('rtl-toggle');
+            function setRTL(isRTL) {
+                document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+                document.documentElement.setAttribute('lang', isRTL ? 'ar' : 'en');
+                localStorage.setItem('dir', isRTL ? 'rtl' : 'ltr');
+            }
+            setRTL(localStorage.getItem('dir') === 'rtl');
+            rtlBtn?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+        });
+    </script>
+
+</body>
+</html>
