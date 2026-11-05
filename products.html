@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenCart — Shop Fresh Products</title>
+    <title>GreenCart — Shop Fresh Products | Groceries & Daily Essentials</title>
+    <meta name="description" content="Explore GreenCart's full catalog of fresh fruits, crisp vegetables, dairy, pantry staples, and household essentials with easy filters and instant cart.">
+    <meta name="theme-color" content="#2E7D32">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -44,6 +46,12 @@
                         'slide-up': 'slideUp 0.5s ease-out',
                         'float-slow': 'floatSlow 6s ease-in-out infinite',
                         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
+                        'forge-glow': 'forgeGlow 3s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 12s linear infinite',
+                        'ping-slow': 'pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+                        'drive': 'drive 8s linear infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
                         'marquee': 'marquee 40s linear infinite',
                     },
                     keyframes: {
@@ -51,6 +59,12 @@
                         slideUp: { '0%': { transform: 'translateY(30px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
                         floatSlow: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
                         pulseSoft: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0.6' } },
+                        bounceGentle: { '0%,100%': { transform: 'translateY(0) rotate(0deg)' }, '50%': { transform: 'translateY(-12px) rotate(-4deg)' } },
+                        forgeGlow: { '0%,100%': { boxShadow: '0 0 0 0 rgba(46,125,50,0.4)' }, '50%': { boxShadow: '0 0 50px 10px rgba(46,125,50,0.2)' } },
+                        spinSlow: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+                        pingSlow: { '0%': { transform: 'scale(1)', opacity: '0.8' }, '100%': { transform: 'scale(2.2)', opacity: '0' } },
+                        drive: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(100%)' } },
+                        shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
                         marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
                     }
                 }
@@ -78,6 +92,21 @@
             --color-rgb-dark: 27, 94, 32;
             --color-rgb-bright: 165, 214, 167;
             --color-rgb-accent: 249, 168, 37;
+        }
+
+        [data-theme="market-sunset"] {
+            --color-primary: #E65100;
+            --color-primary-light: #FF9800;
+            --color-primary-dark: #BF360C;
+            --color-primary-bright: #FFCC80;
+            --color-accent: #FDD835;
+            --color-bg-warm: #FFF8F2;
+            --color-text-dark: #2B1408;
+            --color-rgb-primary: 230, 81, 0;
+            --color-rgb-light: 255, 152, 0;
+            --color-rgb-dark: 191, 54, 12;
+            --color-rgb-bright: 255, 204, 128;
+            --color-rgb-accent: 253, 216, 53;
         }
 
         body {

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html lang="en" dir="ltr" class="scroll-smooth" data-theme="market-fresh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 — Page Not Found | GreenCart | Fresh Groceries Delivered</title>
+    <title>GreenCart — 404 Page Not Found | Fresh Groceries & Daily Essentials</title>
+    <meta name="description" content="This aisle is out of stock! The page you're looking for doesn't exist or has moved. Explore fresh groceries and daily essentials on GreenCart.">
+    <meta name="theme-color" content="#2E7D32">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="alternate icon" href="assets/favicon.svg">
-
-    <meta name="description" content="This page has been picked clean. The page you're looking for doesn't exist or has been moved. Let's get you back to the fresh aisle.">
 
     <!-- Tailwind CSS (Local with CDN fallback) -->
     <script src="tailwind.js"></script>
@@ -48,7 +48,11 @@
                         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
                         'bounce-gentle': 'bounceGentle 2.5s ease-in-out infinite',
                         'forge-glow': 'forgeGlow 3s ease-in-out infinite',
-                        'spin-slow': 'spinSlow 14s linear infinite',
+                        'spin-slow': 'spinSlow 12s linear infinite',
+                        'ping-slow': 'pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+                        'drive': 'drive 8s linear infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                        'marquee': 'marquee 40s linear infinite',
                     },
                     keyframes: {
                         fadeIn: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
@@ -58,6 +62,10 @@
                         bounceGentle: { '0%,100%': { transform: 'translateY(0) rotate(0deg)' }, '50%': { transform: 'translateY(-12px) rotate(-4deg)' } },
                         forgeGlow: { '0%,100%': { boxShadow: '0 0 0 0 rgba(46,125,50,0.4)' }, '50%': { boxShadow: '0 0 50px 10px rgba(46,125,50,0.2)' } },
                         spinSlow: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+                        pingSlow: { '0%': { transform: 'scale(1)', opacity: '0.8' }, '100%': { transform: 'scale(2.2)', opacity: '0' } },
+                        drive: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(100%)' } },
+                        shimmer: { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+                        marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
                     }
                 }
             }
@@ -84,6 +92,21 @@
             --color-rgb-dark: 27, 94, 32;
             --color-rgb-bright: 165, 214, 167;
             --color-rgb-accent: 249, 168, 37;
+        }
+
+        [data-theme="market-sunset"] {
+            --color-primary: #E65100;
+            --color-primary-light: #FF9800;
+            --color-primary-dark: #BF360C;
+            --color-primary-bright: #FFCC80;
+            --color-accent: #FDD835;
+            --color-bg-warm: #FFF8F2;
+            --color-text-dark: #2B1408;
+            --color-rgb-primary: 230, 81, 0;
+            --color-rgb-light: 255, 152, 0;
+            --color-rgb-dark: 191, 54, 12;
+            --color-rgb-bright: 255, 204, 128;
+            --color-rgb-accent: 253, 216, 53;
         }
 
         body {
@@ -266,9 +289,10 @@
 <body class="bg-bg-warm dark:bg-dark-bg text-neutral-dark dark:text-gray-200">
 
     <!-- ========== TOP MINIMAL BAR (Logo + Theme/RTL Controls) ========== -->
-    <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 pointer-events-none">
-        <div class="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
-            <!-- Brand Logo -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-3 sm:pt-4 pointer-events-none">
+        <nav class="max-w-7xl mx-auto pointer-events-auto bg-white/90 dark:bg-[#14201A]/90 backdrop-blur-xl rounded-full px-5 sm:px-7 py-2.5 sm:py-3 border border-brand/25 dark:border-brand-bright/25 shadow-[0_20px_45px_-15px_rgba(0,0,0,0.12)] dark:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.7)] flex items-center justify-between transition-colors duration-300">
+
+            <!-- Brand -->
             <a href="index.html" class="flex items-center gap-3 group shrink-0" dir="ltr">
                 <div class="w-10 h-10 sm:w-11 sm:h-11 bg-gradient-to-br from-brand-light to-brand rounded-2xl flex items-center justify-center shadow-md group-hover:rotate-6 transition">
                     <i class="fas fa-basket-shopping text-white text-lg"></i>
@@ -281,19 +305,118 @@
                 </div>
             </a>
 
-            <!-- Dark / Light Mode & RTL Controls -->
-            <div class="flex items-center gap-2.5 bg-white/80 dark:bg-[#14201A]/80 backdrop-blur-xl px-3 py-1.5 rounded-full border border-brand/20 dark:border-brand-bright/20 shadow-sm">
-                <button id="theme-toggle" class="toggle-btn !w-9 !h-9 text-sm" title="Dark / Light">
+            <!-- Desktop Nav -->
+            <div class="hidden xl:flex items-center gap-5 xl:gap-6">
+                <!-- Home with Dropdown -->
+                <div class="relative group" id="home-dropdown-wrapper">
+                    <button id="home-dropdown-btn" class="nav-item flex items-center gap-1.5 focus:outline-none cursor-pointer">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 pt-2.5 z-50">
+                        <div class="bg-white/95 dark:bg-[#14201A]/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-brand/20 dark:border-brand-bright/20 p-2 min-w-[210px] animate-fade-in">
+                            <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-gray-900 dark:text-gray-100 hover:bg-brand/10 dark:hover:bg-brand-bright/15 hover:text-brand dark:hover:text-brand-bright transition cursor-pointer">
+                                <div>
+                                    <div class="leading-tight font-bold text-gray-900 dark:text-gray-100">Home 1</div>
+                                </div>
+                            </a>
+                            <a href="home2.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold text-gray-900 dark:text-gray-100 hover:bg-brand/10 dark:hover:bg-brand-bright/15 hover:text-brand dark:hover:text-brand-bright transition cursor-pointer mt-1">
+                                <div class="leading-tight font-bold text-gray-900 dark:text-gray-100">Home 2</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About near Home -->
+                <a href="about.html" class="nav-item">About</a>
+
+                <!-- Products -->
+                <a href="products.html" class="nav-item">Products</a>
+
+                <!-- Extra Page 1: Offers -->
+                <a href="offers.html" class="nav-item flex items-center gap-1.5">
+                    <span>Offers</span>
+                    <span class="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400">Hot</span>
+                </a>
+
+                <!-- Extra Page 2: Deals Hub -->
+                <a href="deals-hub.html" class="nav-item">Deals Hub</a>
+
+                <!-- Delivery Info -->
+                <a href="delivery-info.html" class="nav-item">Delivery Info</a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item">Contact</a>
+            </div>
+
+            <!-- Toggles + CTA -->
+            <div class="hidden xl:flex items-center gap-2">
+                <button id="theme-toggle" class="toggle-btn" title="Dark / Light">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:inline"></i>
                 </button>
-                <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 text-sm" title="RTL / LTR">⇄</button>
+                <button id="rtl-toggle" class="toggle-btn" title="RTL / LTR">⇄</button>
+                <a href="products.html" class="btn-brand ml-2 !py-2 !px-4 !text-xs">
+                    <i class="fas fa-store"></i> Shop Now
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" class="xl:hidden text-neutral-dark dark:text-gray-200 p-2" aria-label="Menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="xl:hidden max-w-7xl mx-auto mt-2 bg-white dark:bg-[#14201A] rounded-3xl border border-brand/20 dark:border-brand-bright/20 shadow-2xl overflow-hidden pointer-events-auto">
+            <div class="mobile-menu">
+                <!-- Home with Accordion Submenu -->
+                <div class="border-b border-brand/10 dark:border-brand-bright/10">
+                    <button id="mobile-home-toggle" class="mobile-nav-link w-full flex items-center justify-between px-6 py-4 font-semibold text-left border-b border-brand/10 dark:border-brand-bright/10">
+                        <span class="flex items-center gap-2">
+                            <i class="fas fa-house text-brand dark:text-brand-bright text-xs"></i> Home
+                        </span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200" id="mobile-home-icon"></i>
+                    </button>
+                    <div id="mobile-home-submenu" class="hidden pl-8 pr-6 pb-3 space-y-2 bg-brand/5 dark:bg-brand-bright/5">
+                        <a href="index.html" class="flex items-center justify-between py-2 text-sm font-bold text-brand dark:text-brand-bright cursor-pointer">
+                            <span><i class="fas fa-seedling mr-2 text-xs text-brand dark:text-brand-bright"></i> Home 1 </span>
+                            
+                        </a>
+                        <a href="home2.html" class="flex items-center justify-between py-2 text-sm font-semibold opacity-90 hover:text-brand dark:hover:text-brand-bright cursor-pointer">
+                            <span><i class="fas fa-bolt mr-2 text-xs text-brand dark:text-brand-bright"></i> Home 2</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400">New</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="mobile-nav-link block px-6 py-4 font-semibold border-b border-brand/10 dark:border-brand-bright/10 cursor-pointer">About</a>
+                <a href="products.html" class="mobile-nav-link block px-6 py-4 font-semibold border-b border-brand/10 dark:border-brand-bright/10 cursor-pointer">Products</a>
+                <a href="offers.html" class="mobile-nav-link flex items-center justify-between px-6 py-4 font-semibold border-b border-brand/10 dark:border-brand-bright/10 cursor-pointer">
+                    <span>Offers & Specials</span>
+                    <span class="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400">Hot</span>
+                </a>
+                <a href="deals-hub.html" class="mobile-nav-link block px-6 py-4 font-semibold border-b border-brand/10 dark:border-brand-bright/10 cursor-pointer">Deals Hub</a>
+                <a href="delivery-info.html" class="mobile-nav-link block px-6 py-4 font-semibold border-b border-brand/10 dark:border-brand-bright/10 cursor-pointer">Delivery Info</a>
+                <a href="contact.html" class="mobile-nav-link block px-6 py-4 font-semibold border-b border-brand/10 dark:border-brand-bright/10 cursor-pointer">Contact</a>
+                <div class="p-4 pt-3 flex flex-col items-center gap-3 border-t border-brand/10 dark:border-brand-bright/10">
+                    <a href="products.html" class="btn-brand w-full justify-center !py-3 !text-sm shadow-md">
+                        <i class="fas fa-store"></i> Shop Now
+                    </a>
+                    <div class="flex items-center justify-center gap-3">
+                        <button id="theme-toggle-mobile" class="toggle-btn" title="Dark / Light">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button id="rtl-toggle-mobile" class="toggle-btn" title="RTL / LTR">⇄</button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- ========== 404 MAIN CONTENT ========== -->
-    <main class="min-h-screen flex items-center justify-center pt-24 pb-12 px-6 relative overflow-hidden">
+    <main class="min-h-screen flex items-center justify-center pt-32 pb-16 px-6 relative overflow-hidden">
         <!-- Ambient glow -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-10 right-0 w-[400px] h-[400px] rounded-full bg-amber-400/8 blur-3xl pointer-events-none"></div>
@@ -351,15 +474,15 @@
                 </p>
                 <div class="flex flex-wrap gap-3 justify-center items-center">
                     <a href="products.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Products</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
                     <a href="offers.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Offers</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
                     <a href="deals-hub.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Deals Hub</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
                     <a href="delivery-info.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Delivery Info</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
                     <a href="about.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">About</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">•</span>
+                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
                     <a href="contact.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Contact</a>
                 </div>
             </div>
@@ -371,27 +494,83 @@
         </div>
     </main>
 
-    <!-- ========== SCRIPT ========== -->
+    <footer class="mt-10 py-16 bg-white dark:bg-[#14201A] border-t border-neutral-light/70 dark:border-gray-800/60">
+        <div class="container mx-auto max-w-7xl px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-4" dir="ltr">
+                        <div class="w-11 h-11 bg-gradient-to-br from-brand-light to-brand rounded-2xl flex items-center justify-center shadow-sm">
+                            <i class="fas fa-basket-shopping text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-display font-extrabold tracking-tight">Green<span class="green-gradient-text">Cart</span></span>
+                    </a>
+                    <p class="text-base sm:text-[15px] leading-relaxed opacity-85 mb-5 font-normal">Fresh groceries & daily essentials, delivered to your door with same-day convenience.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand/10 dark:bg-brand-bright/10 text-brand dark:text-brand-bright flex items-center justify-center hover:bg-brand hover:text-white transition text-base"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand/10 dark:bg-brand-bright/10 text-brand dark:text-brand-bright flex items-center justify-center hover:bg-brand hover:text-white transition text-base"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand/10 dark:bg-brand-bright/10 text-brand dark:text-brand-bright flex items-center justify-center hover:bg-brand hover:text-white transition text-base"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 text-neutral-dark dark:text-white">Quick Links</h4>
+                    <ul class="space-y-3 text-base sm:text-[15px]">
+                        <li><a href="index.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Home</a></li>
+                        <li><a href="about.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">About Us</a></li>
+                        <li><a href="products.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Products</a></li>
+                        <li><a href="offers.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Offers & Deals</a></li>
+                        <li><a href="contact.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 text-neutral-dark dark:text-white">Categories</h4>
+                    <ul class="space-y-3 text-base sm:text-[15px]">
+                        <li><a href="products.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Fruits</a></li>
+                        <li><a href="products.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Vegetables</a></li>
+                        <li><a href="products.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Pantry</a></li>
+                        <li><a href="products.html" class="opacity-85 hover:opacity-100 hover:text-brand dark:hover:text-brand-bright font-medium transition cursor-pointer">Household</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-display font-bold text-lg mb-4 text-neutral-dark dark:text-white">Store Hours</h4>
+                    <ul class="space-y-3 text-base sm:text-[15px] opacity-85 font-medium">
+                        <li class="flex items-center gap-2.5"><span class="w-[82px] shrink-0">Mon – Fri:</span><span class="font-semibold">7 AM – 10 PM</span></li>
+                        <li class="flex items-center gap-2.5"><span class="w-[82px] shrink-0">Saturday:</span><span class="font-semibold">7 AM – 10 PM</span></li>
+                        <li class="flex items-center gap-2.5"><span class="w-[82px] shrink-0">Sunday:</span><span class="font-semibold">8 AM – 9 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-brand/10 dark:border-brand-bright/10 text-center text-base sm:text-[15px] opacity-85 font-medium">
+                © 2026 GreenCart Grocery Store. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+        <!-- ========== SCRIPT ========== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // ---------- THEME TOGGLE ----------
             const themeBtn = document.getElementById('theme-toggle');
+            const themeBtnM = document.getElementById('theme-toggle-mobile');
             function setTheme(isDark) {
                 document.documentElement.classList.toggle('dark', isDark);
                 document.documentElement.setAttribute('data-theme', 'market-fresh');
-                if (themeBtn) {
-                    const moon = themeBtn.querySelector('.fa-moon');
-                    const sun = themeBtn.querySelector('.fa-sun');
-                    if (isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
-                    else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
-                }
+                [themeBtn, themeBtnM].forEach(btn => {
+                    if (btn) {
+                        const moon = btn.querySelector('.fa-moon');
+                        const sun = btn.querySelector('.fa-sun');
+                        if (isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
+                        else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
+                    }
+                });
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
             }
             setTheme(localStorage.getItem('theme') === 'dark');
             themeBtn?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+            themeBtnM?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
 
             // ---------- RTL TOGGLE ----------
             const rtlBtn = document.getElementById('rtl-toggle');
+            const rtlBtnM = document.getElementById('rtl-toggle-mobile');
             function setRTL(isRTL) {
                 document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
                 document.documentElement.setAttribute('lang', isRTL ? 'ar' : 'en');
@@ -399,6 +578,28 @@
             }
             setRTL(localStorage.getItem('dir') === 'rtl');
             rtlBtn?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+            rtlBtnM?.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+
+            // ---------- MOBILE MENU ----------
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenuWrapper = document.getElementById('mobile-menu');
+            const mobileMenu = document.querySelector('#mobile-menu .mobile-menu');
+            const mobileIcon = document.querySelector('#mobile-toggle i');
+            mobileToggle?.addEventListener('click', () => {
+                const open = mobileMenu.classList.toggle('open');
+                mobileMenuWrapper?.classList.toggle('open', open);
+                mobileIcon?.classList.toggle('fa-bars', !open);
+                mobileIcon?.classList.toggle('fa-times', open);
+            });
+
+            // ---------- MOBILE HOME ACCORDION ----------
+            const mobileHomeToggle = document.getElementById('mobile-home-toggle');
+            const mobileHomeSubmenu = document.getElementById('mobile-home-submenu');
+            const mobileHomeIcon = document.getElementById('mobile-home-icon');
+            mobileHomeToggle?.addEventListener('click', () => {
+                const isHidden = mobileHomeSubmenu.classList.toggle('hidden');
+                mobileHomeIcon?.classList.toggle('rotate-180', !isHidden);
+            });
         });
     </script>
 
