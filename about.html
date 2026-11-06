@@ -474,26 +474,31 @@
     <main id="page-about" class="page-content">
 
         <!-- HERO — CENTERED EDITORIAL -->
-        <section class="pt-32 sm:pt-36 lg:pt-44 pb-20 px-6 relative overflow-hidden text-center">
-            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gradient-to-b from-brand/10 via-brand-bright/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-0 right-10 w-[400px] h-[400px] bg-amber-400/5 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- HERO — OUR STORY (Full Background Image) -->
+        <section class="min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center pt-32 sm:pt-36 lg:pt-44 pb-20 px-6 relative overflow-hidden text-center">
+            <!-- Full-Bleed Background Image & Balanced Dark Overlay -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/p5.jpg" alt="Organic farm harvest and growers" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-black/70"></div>
+            </div>
 
             <div class="container mx-auto max-w-4xl relative z-10">
                 <div class="flex flex-col items-center animate-slide-up">
                     <!-- Badge -->
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/20 dark:border-brand-bright/20 mb-6">
-                        <i class="fas fa-seedling text-brand dark:text-brand-bright text-xs"></i>
-                        <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-brand dark:text-brand-bright">Our Story · Since 2019</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 mb-6 text-gray-200">
+                        <i class="fas fa-seedling text-emerald-400 text-xs"></i>
+                        <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-emerald-300">Our Story &bull; Since 2019</span>
                     </div>
 
                     <!-- Heading -->
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.1] tracking-tight mb-6 max-w-3xl">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.1] tracking-tight mb-6 max-w-3xl text-[#F0F5F1]">
                         We're on a mission to<br>
-                        <span class="green-gradient-text">feed cities better.</span>
+                        <span class="text-emerald-400">feed cities better.</span>
                     </h1>
 
                     <!-- Description -->
-                    <p class="text-base sm:text-lg max-w-2xl mb-8 font-light leading-relaxed opacity-85 mx-auto">
+                    <p class="text-base sm:text-lg max-w-2xl mb-8 font-light leading-relaxed text-gray-300/90 mx-auto">
                         GreenCart started as a tiny farm stand with a big idea: what if fresh, local food could reach every doorstep without the markup, the waste, or the wait?
                     </p>
 
@@ -502,24 +507,24 @@
                         <a href="#our-journey" class="btn-brand">
                             <i class="fas fa-book-open"></i> Our Journey
                         </a>
-                        <a href="contact.html" class="btn-outline-brand">
+                        <a href="contact.html" class="border-2 border-white/70 text-white hover:bg-white/15 px-6 py-3 rounded-full font-bold text-sm transition-all inline-flex items-center gap-2">
                             <i class="fas fa-handshake"></i> Partner With Us
                         </a>
                     </div>
 
                     <!-- Stat row -->
-                    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 pt-8 border-t border-brand/15 dark:border-brand-bright/15 w-full max-w-2xl">
+                    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 pt-8 border-t border-white/20 w-full max-w-2xl">
                         <div>
-                            <div class="text-3xl font-display font-extrabold text-brand dark:text-brand-bright">35+</div>
-                            <div class="text-xs font-semibold opacity-70 uppercase tracking-wider mt-1">Partner Farms</div>
+                            <div class="text-3xl font-display font-extrabold text-emerald-400">35+</div>
+                            <div class="text-xs font-semibold text-gray-300/80 uppercase tracking-wider mt-1">Partner Farms</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-display font-extrabold text-brand dark:text-brand-bright">12k+</div>
-                            <div class="text-xs font-semibold opacity-70 uppercase tracking-wider mt-1">Happy Homes</div>
+                            <div class="text-3xl font-display font-extrabold text-emerald-400">12k+</div>
+                            <div class="text-xs font-semibold text-gray-300/80 uppercase tracking-wider mt-1">Happy Homes</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-display font-extrabold text-brand dark:text-brand-bright">98%</div>
-                            <div class="text-xs font-semibold opacity-70 uppercase tracking-wider mt-1">On-Time Delivery</div>
+                            <div class="text-3xl font-display font-extrabold text-emerald-400">98%</div>
+                            <div class="text-xs font-semibold text-gray-300/80 uppercase tracking-wider mt-1">On-Time Slots</div>
                         </div>
                     </div>
                 </div>

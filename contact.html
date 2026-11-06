@@ -617,33 +617,38 @@
     <main id="page-contact" class="page-content">
 
         <!-- HERO — SPLIT WITH SUPPORT PREVIEW -->
+        <!-- HERO — CONTACT US (Full Background Image) -->
         <section class="pt-32 sm:pt-36 lg:pt-40 pb-16 px-6 relative overflow-hidden">
-            <div class="absolute top-24 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-brand/12 via-brand-bright/8 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-amber-400/6 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Full-Bleed Background Image & Balanced Dark Overlay -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/h2.jpg" alt="Friendly local store kitchen and customer support" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/70"></div>
+            </div>
 
             <div class="container mx-auto max-w-7xl relative z-10">
                 <div class="grid lg:grid-cols-12 gap-12 items-center">
                     <!-- Left copy -->
                     <div class="lg:col-span-6 animate-slide-up">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/20 dark:border-brand-bright/20 mb-6">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft"></span>
-                            <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-brand dark:text-brand-bright">Support Online · Avg. Reply 2 min</span>
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 mb-6 text-gray-200">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+                            <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-emerald-300">Support Online &bull; Avg. Reply 2 min</span>
                         </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] tracking-tight mb-6">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] tracking-tight mb-6 text-[#F0F5F1]">
                             Let's talk.<br>
-                            <span class="green-gradient-text">We're listening.</span>
+                            <span class="text-emerald-400">We're listening.</span>
                         </h1>
 
-                        <p class="text-base sm:text-lg max-w-lg mb-8 font-light leading-relaxed opacity-85">
-                            Questions, feedback, or need a hand with your order? Our team is available 7 days a week — pick the channel that suits you best.
+                        <p class="text-base sm:text-lg max-w-lg mb-8 font-light leading-relaxed text-gray-300/90">
+                            Questions, feedback, or need a hand with your order? Our team is available 7 days a week &mdash; pick the channel that suits you best.
                         </p>
 
                         <div class="flex flex-wrap gap-4">
                             <a href="#contact-form" class="btn-brand">
                                 <i class="fas fa-paper-plane"></i> Send a Message
                             </a>
-                            <a href="#support-team" class="btn-outline-brand">
+                            <a href="#support-team" class="border-2 border-white/70 text-white hover:bg-white/15 px-6 py-3 rounded-full font-bold text-sm transition-all inline-flex items-center gap-2">
                                 <i class="fas fa-users"></i> Meet the Team
                             </a>
                         </div>

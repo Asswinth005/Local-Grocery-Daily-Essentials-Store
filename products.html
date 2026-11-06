@@ -613,93 +613,44 @@
         <!-- ============================================
              HERO SECTION — FRESH MARKET SPLIT
         ============================================ -->
-        <section class="hero-products pt-32 sm:pt-36 lg:pt-40 pb-16 px-6 relative">
-            <!-- Ambient glows -->
-            <div class="absolute top-24 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-brand/12 via-brand-bright/8 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-amber-400/8 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- HERO — PRODUCTS CATALOG (Full Background Image) -->
+        <section class="hero-products relative min-h-[85vh] lg:min-h-[80vh] flex items-center justify-center pt-32 sm:pt-36 lg:pt-40 pb-16 px-6 overflow-hidden text-center">
+            <!-- Full-Bleed Background Image & Balanced Dark Overlay -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/p3.jpg" alt="Farm fresh vegetables and produce" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-black/55"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/65"></div>
+            </div>
 
-            <div class="container mx-auto max-w-7xl relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    <!-- Left: Copy -->
-                    <div class="lg:col-span-6 animate-slide-up">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/20 dark:border-brand-bright/20 mb-6">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft"></span>
-                            <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-brand dark:text-brand-bright">2,400+ Fresh Items In Stock</span>
-                        </div>
+            <div class="container mx-auto max-w-4xl relative z-10 animate-slide-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 mb-6 text-gray-200">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+                    <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-emerald-300">2,400+ Fresh Items In Stock</span>
+                </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] tracking-tight mb-6">
-                            Fill your basket<br>
-                            with <span class="green-gradient-text">farm-fresh.</span>
-                        </h1>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold leading-[1.05] tracking-tight mb-6 text-[#F0F5F1]">
+                    Fill your basket<br>
+                    with <span class="text-emerald-400">farm-fresh.</span>
+                </h1>
 
-                        <p class="text-base sm:text-lg max-w-lg mb-8 font-light leading-relaxed opacity-85">
-                            From ripe fruits and crisp vegetables to pantry staples and daily essentials — every item is hand-picked, quality-checked, and priced fairly.
-                        </p>
+                <p class="text-base sm:text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed text-gray-300/90">
+                    From ripe fruits and crisp vegetables to pantry staples and daily essentials &mdash; every item is hand-picked, quality-checked, and priced fairly.
+                </p>
 
-                        <div class="flex flex-wrap gap-4 mb-10">
-                            <a href="#productGrid" class="btn-brand">
-                                <i class="fas fa-basket-shopping"></i> Browse Products
-                            </a>
-                            <a href="offers.html" class="btn-outline-brand">
-                                <i class="fas fa-tags"></i> View Offers
-                            </a>
-                        </div>
+                <div class="flex flex-wrap gap-4 justify-center mb-10">
+                    <a href="#productGrid" class="btn-brand">
+                        <i class="fas fa-basket-shopping"></i> Browse Products
+                    </a>
+                    <a href="offers.html" class="border-2 border-white/70 text-white hover:bg-white/15 px-6 py-3 rounded-full font-bold text-sm transition-all inline-flex items-center gap-2">
+                        <i class="fas fa-tags"></i> View Offers
+                    </a>
+                </div>
 
-                        <!-- Trust row -->
-                        <div class="flex items-center gap-6 flex-wrap text-xs sm:text-sm font-medium opacity-85 pt-6 border-t border-brand/15 dark:border-brand-bright/15">
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Free delivery over $40</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Same-day slots</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Freshness guarantee</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Layered image composition -->
-                    <div class="lg:col-span-6 flex justify-center lg:justify-end">
-                        <div class="relative w-full max-w-[520px]">
-                            <!-- Main image -->
-                            <div class="hero-img-wrap aspect-[4/3] bg-gray-100 dark:bg-dark-card border border-brand/10 dark:border-brand-bright/10">
-                                <img src="assets/p1.jpg" alt="Fresh grocery spread" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-
-                                <!-- Overlay label -->
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                                    <div class="bg-white/95 dark:bg-black/70 backdrop-blur-md rounded-2xl px-4 py-2.5 shadow-lg">
-                                        <div class="text-[10px] font-bold uppercase tracking-wider text-brand dark:text-brand-bright">Today's harvest</div>
-                                        <div class="text-sm font-display font-extrabold text-neutral-dark dark:text-white">Picked at 5:00 AM</div>
-                                    </div>
-                                    <div class="w-11 h-11 rounded-full bg-brand text-white flex items-center justify-center shadow-lg">
-                                        <i class="fas fa-leaf"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating stat card 1 -->
-                            <div class="absolute -top-5 -left-5 bg-white dark:bg-[#14201A] rounded-2xl px-4 py-3 shadow-xl border border-brand/15 dark:border-brand-bright/15 floating-orb hidden sm:block">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-                                        <i class="fas fa-seedling"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-[10px] uppercase font-bold tracking-wider opacity-60">Farm Direct</div>
-                                        <div class="text-sm font-display font-extrabold">35+ Growers</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating stat card 2 -->
-                            <div class="absolute -bottom-5 -right-5 bg-white dark:bg-[#14201A] rounded-2xl px-4 py-3 shadow-xl border border-brand/15 dark:border-brand-bright/15 floating-orb hidden sm:block" style="animation-delay: 1.2s;">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center">
-                                        <i class="fas fa-truck-fast"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-[10px] uppercase font-bold tracking-wider opacity-60">Delivery</div>
-                                        <div class="text-sm font-display font-extrabold">Today · 4–6 PM</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Trust row -->
+                <div class="flex items-center justify-center gap-6 sm:gap-10 flex-wrap text-xs sm:text-sm font-medium text-gray-300/85 pt-6 border-t border-white/20 max-w-2xl mx-auto">
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Free delivery over $40</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Same-day slots</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Freshness guarantee</span>
                 </div>
             </div>
         </section>

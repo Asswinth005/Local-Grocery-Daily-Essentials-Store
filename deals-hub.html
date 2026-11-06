@@ -551,32 +551,36 @@
     <!-- ========== DEALS HUB PAGE ========== -->
     <main id="page-deals-hub" class="page-content">
 
-        <!-- HERO — DEALS DASHBOARD -->
-        <section class="min-h-screen flex items-center pt-32 pb-14 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20 px-6 relative overflow-hidden text-center">
-            <div class="absolute top-24 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-br from-brand/12 via-amber-400/6 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-brand-bright/8 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- HERO — DEALS DASHBOARD (Full Background Image) -->
+        <section class="min-h-screen flex items-center justify-center pt-32 pb-14 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-20 px-6 relative overflow-hidden text-center">
+            <!-- Full-Bleed Background Image & Balanced Dark Overlay -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/h8.jpg" alt="Deals and seasonal grocery harvest" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-black/55"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/65"></div>
+            </div>
 
             <div class="container mx-auto max-w-4xl relative z-10 w-full">
                 <div class="flex flex-col items-center animate-slide-up">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/20 dark:border-brand-bright/20 mb-5 shadow-sm">
-                        <i class="fas fa-gauge-high text-brand dark:text-brand-bright text-xs"></i>
-                        <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-brand dark:text-brand-bright">Your Savings Dashboard</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 mb-5 shadow-sm text-gray-200">
+                        <i class="fas fa-gauge-high text-emerald-400 text-xs"></i>
+                        <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-emerald-300">Your Savings Dashboard</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold leading-[1.08] tracking-tight mb-5 max-w-3xl">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold leading-[1.08] tracking-tight mb-5 max-w-3xl text-[#F0F5F1]">
                         Every deal,<br>
-                        <span class="green-gradient-text">in one hub.</span>
+                        <span class="text-emerald-400">in one hub.</span>
                     </h1>
 
-                    <p class="text-base sm:text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed opacity-85">
-                        Track active offers, unlock tiered rewards, and see this week's full deal calendar — all in one place. Your savings, organized.
+                    <p class="text-base sm:text-lg max-w-2xl mx-auto mb-8 font-light leading-relaxed text-gray-300/90">
+                        Track active offers, unlock tiered rewards, and see this week's full deal calendar &mdash; all in one place. Your savings, organized.
                     </p>
 
                     <div class="flex flex-wrap gap-4 justify-center">
                         <a href="#active-deals" class="btn-brand">
                             <i class="fas fa-fire"></i> See Active Deals
                         </a>
-                        <a href="#rewards" class="btn-outline-brand">
+                        <a href="#rewards" class="border-2 border-white/70 text-white hover:bg-white/15 px-6 py-3 rounded-full font-bold text-sm transition-all inline-flex items-center gap-2">
                             <i class="fas fa-crown"></i> Loyalty Rewards
                         </a>
                     </div>

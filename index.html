@@ -511,74 +511,51 @@
 
     <!-- ========== PAGE: HOME ========== -->
     <main id="page-home" class="page-content">
-        <!-- HERO -->
-        <section class="pt-32 sm:pt-36 lg:pt-40 pb-16 px-6 relative overflow-hidden">
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-br from-brand/15 via-brand-bright/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        <!-- HERO (Full Background Image with Directly Centered Content) -->
+        <section class="relative min-h-[88vh] lg:min-h-[82vh] flex items-center justify-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 overflow-hidden">
+            <!-- Full-Bleed Background Image & Softened Cinematic Vignette (No Harsh White Fog) -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/grocery-hero.png" alt="Fresh organic groceries" class="w-full h-full object-cover object-center">
+                <!-- Balanced Dark Overlay: Preserves full produce visibility across the entire section without harsh white washout -->
+                <div class="absolute inset-0 bg-black/50"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-transparent to-black/60"></div>
+                <!-- Very Subtle Bottom Edge Transition -->
+                <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
 
-            <div class="container mx-auto max-w-7xl relative z-10">
-                <div class="grid lg:grid-cols-12 gap-10 items-center">
-                    <div class="lg:col-span-7 text-center lg:text-left animate-slide-up">
-                        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/25 dark:border-brand-bright/25 mb-6">
-                            <i class="fas fa-leaf text-brand dark:text-brand-bright text-xs"></i>
-                            <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-brand dark:text-brand-bright">Farm Fresh • Delivered Today</span>
-                        </span>
+            <div class="container mx-auto max-w-4xl relative z-10 text-center animate-slide-up">
+                <!-- Top Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/15 shadow-sm mb-6 text-gray-200">
+                    <i class="fas fa-leaf text-emerald-400 text-xs"></i>
+                    <span class="text-[11px] font-bold tracking-[0.2em] uppercase text-emerald-300/90">Farm Fresh &bull; Delivered Today</span>
+                </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold leading-[1.08] tracking-tight mb-6">
-                            Your Daily Groceries,<br>
-                            <span class="green-gradient-text">Delivered Fresh.</span>
-                        </h1>
+                <!-- Main Centered Heading (Softened Contrast, Organic Tone) -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold leading-[1.08] tracking-tight mb-6 text-[#F0F5F1] drop-shadow-sm max-w-3xl mx-auto">
+                    Your Daily Groceries,<br>
+                    <span class="text-emerald-400">Delivered Fresh.</span>
+                </h1>
 
-                        <p class="text-base sm:text-lg max-w-xl mx-auto lg:mx-0 mb-8 font-light leading-relaxed opacity-85">
-                            Fruits, vegetables, pantry staples and household essentials — sourced locally, priced fairly, and delivered to your door in same-day slots.
-                        </p>
+                <!-- Subtitle (Muted Soft Gray for Reduced Glare) -->
+                <p class="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-8 font-normal leading-relaxed text-gray-300/90 drop-shadow-sm">
+                    Fruits, vegetables, pantry staples and household essentials &mdash; sourced locally, priced fairly, and delivered to your door in same-day slots.
+                </p>
 
-                        <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
-                            <a href="products.html" class="btn-brand">
-                                <i class="fas fa-basket-shopping"></i> Start Shopping
-                            </a>
-                            <a href="delivery-info.html" class="btn-outline-brand">
-                                <i class="fas fa-truck-fast"></i> Delivery Info
-                            </a>
-                        </div>
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center items-center mb-8">
+                    <a href="products.html" class="btn-brand shadow-lg hover:shadow-xl">
+                        <i class="fas fa-basket-shopping"></i> Start Shopping
+                    </a>
+                    <a href="delivery-info.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm text-gray-200 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm transition shadow-sm">
+                        <i class="fas fa-truck-fast"></i> Delivery Info
+                    </a>
+                </div>
 
-                        <div class="flex items-center justify-center lg:justify-start gap-6 flex-wrap text-xs sm:text-sm border-t border-brand/15 dark:border-brand-bright/15 pt-6 font-medium opacity-85">
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Free delivery over $40</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Same-day slots</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> 100% fresh guarantee</span>
-                        </div>
-                    </div>
-
-                    <!-- Hero visual -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative w-full max-w-[380px]">
-                            <div class="p-2 rounded-[2.25rem] bg-gradient-to-b from-brand/35 via-brand/15 to-transparent border border-brand/30 dark:border-brand-bright/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)]">
-                                <div class="rounded-[calc(2.25rem-0.5rem)] overflow-hidden aspect-[4/5] bg-gray-100 dark:bg-dark-card relative">
-                                    <img src="assets/grocery-hero.png" alt="Fresh grocery basket" class="w-full h-full object-cover">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                                    <!-- Floating stat card -->
-                                    <div class="absolute bottom-3 left-3 right-3 bg-white/95 dark:bg-[#14201A]/95 backdrop-blur-xl p-3.5 rounded-2xl shadow-2xl border border-brand/25 dark:border-brand-bright/30 flex items-center justify-between">
-                                        <div class="flex items-center gap-2.5">
-                                            <div class="w-9 h-9 rounded-full bg-brand/20 dark:bg-brand-bright/20 flex items-center justify-center text-brand dark:text-brand-bright">
-                                                <i class="fas fa-truck-fast text-sm"></i>
-                                            </div>
-                                            <div>
-                                                <div class="text-[11px] font-bold uppercase tracking-wider">Next Slot</div>
-                                                <div class="text-[10px] opacity-70">Today · 4:00–6:00 PM</div>
-                                            </div>
-                                        </div>
-                                        <span class="text-[11px] font-bold text-brand dark:text-brand-bright">Available</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating badge -->
-                            <div class="absolute -top-3 -right-3 bg-white dark:bg-[#14201A] rounded-2xl px-3.5 py-2 shadow-xl border border-brand/20 dark:border-brand-bright/25 floating-scoop">
-                                <div class="text-[10px] uppercase tracking-widest font-bold text-brand dark:text-brand-bright">Today</div>
-                                <div class="text-lg font-display font-extrabold">12 Deals</div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Trust Guarantees (Softened Contrast) -->
+                <div class="flex items-center justify-center gap-4 sm:gap-8 flex-wrap text-xs sm:text-sm border-t border-white/15 pt-6 font-medium text-gray-300/85 max-w-2xl mx-auto">
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400/90"></i> Free delivery over $40</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400/90"></i> Same-day slots</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400/90"></i> 100% fresh guarantee</span>
                 </div>
             </div>
         </section>

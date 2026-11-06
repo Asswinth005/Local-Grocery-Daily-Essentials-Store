@@ -244,9 +244,9 @@
         }
         .dark .express-card { background: #14201A; border-color: rgba(var(--color-rgb-bright), 0.15); }
         .express-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 30px 60px -20px rgba(var(--color-rgb-primary), 0.3);
-            border-color: rgba(var(--color-rgb-primary), 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(var(--color-rgb-primary), 0.25);
+            border-color: rgba(var(--color-rgb-primary), 0.35);
         }
 
         .bento-tile {
@@ -465,95 +465,57 @@
     <!-- ========== HOME 2 PAGE ========== -->
     <main id="page-home2" class="page-content">
 
-        <!-- HERO — EXPRESS MART (asymmetric split, bold typography, floating UI) -->
-        <section class="pt-32 sm:pt-36 lg:pt-40 pb-16 px-6 relative overflow-hidden">
-            <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-brand/10 via-brand-bright/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-amber-400/5 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- HERO — EXPRESS MART (Full Background Image with Directly Centered Content) -->
+        <section class="relative min-h-[88vh] lg:min-h-[82vh] flex items-center justify-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 overflow-hidden">
+            <!-- Full-Bleed Background Image & Softened Cinematic Vignette (No Harsh White Fog) -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/home2-hero.jpg" alt="Express fresh groceries and daily essentials" class="w-full h-full object-cover object-center">
+                <!-- Balanced Dark Overlay -->
+                <div class="absolute inset-0 bg-black/50"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-transparent to-black/60"></div>
+                <!-- Very Subtle Bottom Edge Transition -->
+                <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
 
-            <div class="container mx-auto max-w-7xl relative z-10">
-                <div class="grid lg:grid-cols-12 gap-8 items-center">
-                    <!-- Left: Text -->
-                    <div class="lg:col-span-6 xl:col-span-5 animate-slide-up">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/20 dark:border-brand-bright/20 mb-6">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft"></span>
-                            <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-brand dark:text-brand-bright">Express Mart · 15-min slots</span>
+            <div class="container mx-auto max-w-4xl relative z-10 text-center animate-slide-up">
+                <!-- Express Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/15 shadow-sm mb-6 text-gray-200">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+                    <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-emerald-300/90">Express Mart &bull; 15-Minute Slots</span>
+                </div>
+
+                <!-- High-Impact Centered Headline (Softened Contrast) -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold leading-[1.05] tracking-tight mb-6 text-[#F0F5F1] drop-shadow-sm max-w-3xl mx-auto">
+                    Groceries at<br>
+                    <span class="text-emerald-400">lightning speed.</span>
+                </h1>
+
+                <!-- Subtitle (Muted Soft Gray for Reduced Glare) -->
+                <p class="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-8 font-normal leading-relaxed text-gray-300/90 drop-shadow-sm">
+                    Skip the queue. Over 2,400 chilled essentials, organic snacks, artisan dairy, and farm produce packed in under 3 minutes &mdash; delivered to your doorstep in 15 to 30 minutes.
+                </p>
+
+                <!-- Postcode Delivery Checker (Interactive Form) -->
+                <div class="max-w-xl mx-auto mb-8">
+                    <form id="hero-postcode-form" class="flex flex-col sm:flex-row items-center gap-2.5 bg-black/45 backdrop-blur-xl p-2 rounded-2xl sm:rounded-full border border-white/20 shadow-xl" onsubmit="event.preventDefault(); document.getElementById('postcode-status').classList.remove('hidden');">
+                        <div class="flex items-center gap-3 w-full sm:w-auto flex-1 pl-4">
+                            <i class="fas fa-location-dot text-emerald-400 text-base shrink-0"></i>
+                            <input type="text" id="postcode-input" placeholder="Enter your postcode..." class="w-full bg-transparent border-none outline-none text-sm font-medium py-2.5 text-gray-200 placeholder:text-gray-400">
                         </div>
-
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] tracking-tight mb-6">
-                            Groceries at<br>
-                            <span class="green-gradient-text">lightning speed.</span>
-                        </h1>
-
-                        <p class="text-base sm:text-lg max-w-lg mb-8 font-light leading-relaxed opacity-85">
-                            Skip the queue. Our express dark-store network delivers fresh produce, chilled dairy, and everyday essentials in under 30 minutes — or the next slot that suits you.
-                        </p>
-
-                        <!-- Express search bar (UI element) -->
-                        <div class="flex items-center gap-3 bg-white dark:bg-[#14201A] rounded-full p-1.5 border border-brand/20 dark:border-brand-bright/20 shadow-lg max-w-md mb-8">
-                            <div class="pl-4 text-brand dark:text-brand-bright">
-                                <i class="fas fa-location-dot"></i>
-                            </div>
-                            <input type="text" placeholder="Enter your postcode..." class="flex-1 bg-transparent border-none outline-none text-sm font-medium py-3 placeholder:opacity-50">
-                            <button class="btn-brand !py-2.5 !px-5 !text-xs whitespace-nowrap">
-                                <i class="fas fa-bolt"></i> Check
-                            </button>
-                        </div>
-
-                        <div class="flex items-center gap-6 flex-wrap text-xs sm:text-sm font-medium opacity-80">
-                            <span class="flex items-center gap-2"><i class="fas fa-clock text-brand dark:text-brand-bright"></i> Avg. 22 min delivery</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-box text-brand dark:text-brand-bright"></i> 2,400+ items in stock</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-shield text-brand dark:text-brand-bright"></i> Freshness guarantee</span>
-                        </div>
+                        <button type="submit" class="btn-brand w-full sm:w-auto !py-3 !px-6 !text-xs whitespace-nowrap shadow-lg">
+                            <i class="fas fa-bolt"></i> Check Express Delivery
+                        </button>
+                    </form>
+                    <div id="postcode-status" class="hidden mt-3 text-xs font-semibold text-emerald-300 flex items-center justify-center gap-1.5 animate-fade-in drop-shadow">
+                        <i class="fas fa-check-circle"></i> Great news! 15-minute express delivery is active in your area.
                     </div>
+                </div>
 
-                    <!-- Right: Visual composition — floating cards, bento -->
-                    <div class="lg:col-span-6 xl:col-span-7 flex justify-center lg:justify-end">
-                        <div class="relative w-full max-w-[520px]">
-                            <!-- Main image card -->
-                            <div class="gradient-border shadow-2xl">
-                                <div class="gradient-border-inner p-4">
-                                    <div class="rounded-[1.8rem] overflow-hidden aspect-[4/3] bg-gray-100 dark:bg-dark-card relative">
-                                        <img src="assets/grocery-hero.png" alt="Express grocery delivery" class="w-full h-full object-cover">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                                        
-                                        <!-- Bottom info -->
-                                        <div class="absolute bottom-0 left-0 right-0 p-3.5 sm:p-4 flex items-end justify-between pointer-events-none">
-                                            <div class="max-w-[48%] sm:max-w-[55%] lg:max-w-none">
-                                                <div class="text-white/75 text-[9px] sm:text-[11px] font-bold uppercase tracking-widest">Now delivering</div>
-                                                <div class="text-white text-xs sm:text-base lg:text-lg font-display font-extrabold leading-snug">Downtown &amp; Riverside</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating stat card 1 -->
-                            <div class="absolute -top-3 left-2 sm:-top-4 sm:left-3 lg:left-2 xl:-left-6 bg-white dark:bg-[#14201A] rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl border border-brand/15 dark:border-brand-bright/15 floating-badge z-10">
-                                <div class="flex items-center gap-2.5 sm:gap-3">
-                                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs sm:text-base shrink-0">
-                                        <i class="fas fa-bolt"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider opacity-60">Express</div>
-                                        <div class="text-xs sm:text-sm font-display font-extrabold whitespace-nowrap">15–30 min</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating stat card 2 -->
-                            <div class="absolute -bottom-3 right-2 sm:-bottom-4 sm:right-3 lg:right-2 xl:-right-6 bg-white dark:bg-[#14201A] rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 shadow-xl border border-brand/15 dark:border-brand-bright/15 floating-badge z-10" style="animation-delay: 1s;">
-                                <div class="flex items-center gap-2.5 sm:gap-3">
-                                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xs sm:text-base shrink-0">
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider opacity-60">Rated</div>
-                                        <div class="text-xs sm:text-sm font-display font-extrabold whitespace-nowrap">4.96 ★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Trust Indicators -->
+                <div class="flex items-center justify-center gap-4 sm:gap-8 flex-wrap text-xs sm:text-sm font-medium text-gray-300/85 max-w-2xl mx-auto pt-4 border-t border-white/15">
+                    <span class="flex items-center gap-2"><i class="fas fa-clock text-emerald-400/90"></i> Avg. 22 min delivery</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-box text-emerald-400/90"></i> 2,400+ items in stock</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-shield text-emerald-400/90"></i> 100% freshness guarantee</span>
                 </div>
             </div>
         </section>
@@ -759,25 +721,15 @@
         <!-- EXPRESS DEALS — HORIZONTAL SCROLL SNAP (unique style) -->
         <section class="py-16 px-6 bg-brand/5 dark:bg-brand-bright/5 border-y border-brand/10 dark:border-brand-bright/10">
             <div class="container mx-auto max-w-7xl">
-                <div class="flex flex-wrap justify-between items-end mb-8 gap-4">
-                    <div>
-                        <span class="text-brand dark:text-brand-bright font-bold text-xs tracking-[0.25em] uppercase">Flash deals</span>
-                        <h2 class="text-3xl sm:text-4xl font-display font-extrabold mt-3">Grab them <span class="green-gradient-text">fast.</span></h2>
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="w-10 h-10 rounded-full border border-brand/20 dark:border-brand-bright/20 flex items-center justify-center text-brand dark:text-brand-bright hover:bg-brand hover:text-white transition">
-                            <i class="fas fa-chevron-left text-xs"></i>
-                        </button>
-                        <button class="w-10 h-10 rounded-full border border-brand/20 dark:border-brand-bright/20 flex items-center justify-center text-brand dark:text-brand-bright hover:bg-brand hover:text-white transition">
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </button>
-                    </div>
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-brand dark:text-brand-bright font-bold text-xs tracking-[0.25em] uppercase">Flash deals</span>
+                    <h2 class="text-3xl sm:text-4xl font-display font-extrabold mt-3">Grab them <span class="green-gradient-text">fast.</span></h2>
                 </div>
 
                 <!-- Horizontal scroll container -->
-                <div class="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-thin">
+                <div class="flex gap-5 overflow-x-auto pt-4 pb-6 px-2 scrollbar-thin lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible">
                     <!-- Deal card 1 -->
-                    <div class="express-card min-w-[240px] sm:min-w-[280px] snap-start flex-shrink-0">
+                    <div class="express-card min-w-[240px] sm:min-w-[260px] lg:min-w-0 flex-shrink-0">
                         <div class="relative h-40 overflow-hidden">
                             <img src="assets/produce-1.jpg" alt="Organic Bananas" class="w-full h-full object-cover">
                             <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full">-25%</span>
@@ -801,7 +753,7 @@
                     </div>
 
                     <!-- Deal card 2 -->
-                    <div class="express-card min-w-[240px] sm:min-w-[280px] snap-start flex-shrink-0">
+                    <div class="express-card min-w-[240px] sm:min-w-[260px] lg:min-w-0 flex-shrink-0">
                         <div class="relative h-40 overflow-hidden">
                             <img src="assets/produce-2.jpg" alt="Baby Spinach" class="w-full h-full object-cover">
                             <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full">-15%</span>
@@ -825,7 +777,7 @@
                     </div>
 
                     <!-- Deal card 3 -->
-                    <div class="express-card min-w-[240px] sm:min-w-[280px] snap-start flex-shrink-0">
+                    <div class="express-card min-w-[240px] sm:min-w-[260px] lg:min-w-0 flex-shrink-0">
                         <div class="relative h-40 overflow-hidden">
                             <img src="assets/produce-3.jpg" alt="Vine Tomatoes" class="w-full h-full object-cover">
                             <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full">-20%</span>
@@ -849,7 +801,7 @@
                     </div>
 
                     <!-- Deal card 4 -->
-                    <div class="express-card min-w-[240px] sm:min-w-[280px] snap-start flex-shrink-0">
+                    <div class="express-card min-w-[240px] sm:min-w-[260px] lg:min-w-0 flex-shrink-0">
                         <div class="relative h-40 overflow-hidden">
                             <img src="assets/hi.jpg" alt="Olive Oil" class="w-full h-full object-cover">
                             <span class="absolute top-3 left-3 bg-red-500 text-white text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full">-10%</span>

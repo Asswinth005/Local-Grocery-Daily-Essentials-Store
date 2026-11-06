@@ -417,43 +417,37 @@
 
     <!-- ========== 404 MAIN CONTENT ========== -->
     <main class="min-h-screen flex items-center justify-center pt-32 pb-16 px-6 relative overflow-hidden">
-        <!-- Ambient glow -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-0 w-[400px] h-[400px] rounded-full bg-amber-400/8 blur-3xl pointer-events-none"></div>
-
-        <!-- Floating leaves (decorative) -->
-        <i class="fas fa-leaf leaf-particle" style="top: 18%; left: 12%; font-size: 22px; animation-delay: 0s;"></i>
-        <i class="fas fa-seedling leaf-particle" style="top: 65%; left: 8%; font-size: 18px; animation-delay: 1.5s;"></i>
-        <i class="fas fa-leaf leaf-particle" style="top: 28%; right: 10%; font-size: 26px; animation-delay: 2.5s;"></i>
-        <i class="fas fa-seedling leaf-particle" style="top: 72%; right: 14%; font-size: 20px; animation-delay: 3.5s;"></i>
+        <!-- Full-Bleed Background Image & Balanced Dark Overlay -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="assets/a2.jpg" alt="Artisan market shelves" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-black/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/75"></div>
+        </div>
 
         <div class="max-w-2xl mx-auto text-center animate-fade-in-up relative z-10">
             <!-- Animated Basket Icon -->
             <div class="mb-6 floating-basket">
-                <div class="w-28 h-28 md:w-36 md:h-36 rounded-full border-8 border-brand/20 flex items-center justify-center mx-auto relative bg-white dark:bg-[#14201A] animate-forge-glow">
+                <div class="w-28 h-28 md:w-36 md:h-36 rounded-full border-8 border-white/20 flex items-center justify-center mx-auto relative bg-black/40 backdrop-blur-md animate-forge-glow">
                     <div class="basket-icon-wrapper">
-                        <i class="fas fa-basket-shopping text-brand dark:text-brand-bright text-5xl md:text-6xl" style="display:inline-block;"></i>
+                        <i class="fas fa-basket-shopping text-emerald-400 text-5xl md:text-6xl" style="display:inline-block;"></i>
                         <div class="empty-basket-ring"></div>
                     </div>
-                    <div class="absolute inset-0 rounded-full border-4 border-brand/20 animate-ping opacity-50"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-emerald-400/30 animate-ping opacity-50"></div>
                 </div>
             </div>
 
             <!-- Large 404 Number -->
             <div class="mb-4">
-                <span class="text-[110px] md:text-[170px] font-display font-extrabold error-number-gradient leading-none tracking-tighter">404</span>
+                <span class="text-[110px] md:text-[170px] font-display font-extrabold text-[#F0F5F1] drop-shadow-md leading-none tracking-tighter">404</span>
             </div>
 
             <!-- Title -->
-            <h1 class="text-2xl md:text-3xl font-display font-bold text-neutral-dark dark:text-white mb-3">
+            <h1 class="text-2xl md:text-3xl font-display font-bold text-[#F0F5F1] mb-3">
                 This Aisle Is Out of Stock
             </h1>
 
-            <!-- Divider -->
-            <div class="accent-line"></div>
-
             <!-- Message -->
-            <p class="text-base md:text-lg text-neutral-dark dark:text-gray-300 mb-8 leading-relaxed max-w-md mx-auto opacity-90">
+            <p class="text-base md:text-lg text-gray-300/90 mb-8 leading-relaxed max-w-md mx-auto">
                 The page you're looking for has been picked clean, moved to another aisle, or never made it to the shelf. Let's get you back to the fresh stuff.
             </p>
 
@@ -462,34 +456,34 @@
                 <a href="index.html" class="btn-brand">
                     <i class="fas fa-home"></i> Back to Home
                 </a>
-                <a href="products.html" class="btn-outline-brand">
+                <a href="products.html" class="border-2 border-white/70 text-white hover:bg-white/15 px-6 py-3 rounded-full font-bold text-sm transition-all inline-flex items-center gap-2">
                     <i class="fas fa-basket-shopping"></i> Shop Fresh
                 </a>
             </div>
 
             <!-- Quick Links -->
-            <div class="border-t border-brand/20 dark:border-brand-bright/20 pt-8">
-                <p class="text-sm text-neutral-dark dark:text-gray-400 mb-4 opacity-80">
-                    <i class="fas fa-seedling text-brand dark:text-brand-bright mr-2"></i> Explore GreenCart
+            <div class="border-t border-white/20 pt-8">
+                <p class="text-sm text-gray-300/80 mb-4">
+                    <i class="fas fa-seedling text-emerald-400 mr-2"></i> Explore GreenCart
                 </p>
-                <div class="flex flex-wrap gap-3 justify-center items-center">
-                    <a href="products.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Products</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
-                    <a href="offers.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Offers</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
-                    <a href="deals-hub.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Deals Hub</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
-                    <a href="delivery-info.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Delivery Info</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
-                    <a href="about.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">About</a>
-                    <span class="text-brand/40 dark:text-brand-bright/40">&bull;</span>
-                    <a href="contact.html" class="text-sm font-medium text-neutral-dark dark:text-gray-300 hover:text-brand dark:hover:text-brand-bright transition">Contact</a>
+                <div class="flex flex-wrap gap-3 justify-center items-center text-sm">
+                    <a href="products.html" class="font-medium text-gray-200 hover:text-emerald-400 transition">Products</a>
+                    <span class="text-white/40">&bull;</span>
+                    <a href="offers.html" class="font-medium text-gray-200 hover:text-emerald-400 transition">Offers</a>
+                    <span class="text-white/40">&bull;</span>
+                    <a href="deals-hub.html" class="font-medium text-gray-200 hover:text-emerald-400 transition">Deals Hub</a>
+                    <span class="text-white/40">&bull;</span>
+                    <a href="delivery-info.html" class="font-medium text-gray-200 hover:text-emerald-400 transition">Delivery Info</a>
+                    <span class="text-white/40">&bull;</span>
+                    <a href="about.html" class="font-medium text-gray-200 hover:text-emerald-400 transition">About</a>
+                    <span class="text-white/40">&bull;</span>
+                    <a href="contact.html" class="font-medium text-gray-200 hover:text-emerald-400 transition">Contact</a>
                 </div>
             </div>
 
             <!-- Fun Fact Note -->
-            <div class="mt-8 text-xs text-neutral-dark/60 dark:text-gray-500">
-                <i class="fas fa-lightbulb mr-1 text-brand dark:text-brand-bright"></i> Pro tip: Even the freshest carts sometimes take a wrong turn. Try the search or head back to the homepage.
+            <div class="mt-8 text-xs text-gray-400">
+                <i class="fas fa-lightbulb mr-1 text-emerald-400"></i> Pro tip: Even the freshest carts sometimes take a wrong turn. Try the search or head back to the homepage.
             </div>
         </div>
     </main>

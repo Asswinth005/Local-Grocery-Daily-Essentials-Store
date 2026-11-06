@@ -613,42 +613,47 @@
     <main id="page-delivery" class="page-content">
 
         <!-- HERO — MAP & COVERAGE CHECKER -->
+        <!-- HERO — DELIVERY COVERAGE (Full Background Image) -->
         <section class="pt-32 sm:pt-36 lg:pt-40 pb-16 px-6 relative overflow-hidden">
-            <div class="absolute top-24 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-brand/12 via-brand-bright/8 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute bottom-10 right-0 w-[500px] h-[500px] bg-amber-400/6 rounded-full blur-3xl pointer-events-none"></div>
+            <!-- Full-Bleed Background Image & Balanced Dark Overlay -->
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="assets/p7.jpg" alt="Local fresh groceries ready for delivery" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/70"></div>
+            </div>
 
             <div class="container mx-auto max-w-7xl relative z-10">
                 <div class="grid lg:grid-cols-12 gap-10 items-center">
                     <!-- Left copy -->
                     <div class="lg:col-span-5 animate-slide-up">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 dark:bg-brand-bright/10 border border-brand/20 dark:border-brand-bright/20 mb-6">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft"></span>
-                            <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-brand dark:text-brand-bright">Now Delivering · 7 Days a Week</span>
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 mb-6 text-gray-200">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-soft"></span>
+                            <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-emerald-300">Now Delivering &bull; 7 Days a Week</span>
                         </div>
 
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] tracking-tight mb-6">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold leading-[1.05] tracking-tight mb-6 text-[#F0F5F1]">
                             Fresh food,<br>
-                            <span class="green-gradient-text">at your door.</span>
+                            <span class="text-emerald-400">at your door.</span>
                         </h1>
 
-                        <p class="text-base sm:text-lg max-w-lg mb-8 font-light leading-relaxed opacity-85">
+                        <p class="text-base sm:text-lg max-w-lg mb-8 font-light leading-relaxed text-gray-300/90">
                             Same-day slots, live tracking, and temperature-controlled delivery. Enter your postcode to check if we deliver to you.
                         </p>
 
                         <!-- Coverage checker -->
-                        <div class="coverage-input flex items-center gap-3 px-5 py-3 mb-3 max-w-md">
-                            <i class="fas fa-location-dot text-brand dark:text-brand-bright"></i>
-                            <input id="postcodeInput" type="text" placeholder="Enter your postcode..." class="flex-1 bg-transparent border-none outline-none text-sm font-medium placeholder:opacity-50">
+                        <div class="coverage-input flex items-center gap-3 px-5 py-3 mb-3 max-w-md bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl">
+                            <i class="fas fa-location-dot text-emerald-400"></i>
+                            <input id="postcodeInput" type="text" placeholder="Enter your postcode..." class="flex-1 bg-transparent border-none outline-none text-sm font-medium text-white placeholder:text-gray-400">
                             <button id="checkCoverage" class="btn-brand !py-2 !px-5 !text-xs whitespace-nowrap">
                                 <i class="fas fa-bolt"></i> Check
                             </button>
                         </div>
                         <div id="coverageResult" class="hidden text-sm font-bold mb-6"></div>
 
-                        <div class="flex items-center gap-6 flex-wrap text-xs sm:text-sm font-medium opacity-85">
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Free over $40</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Same-day slots</span>
-                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-brand dark:text-brand-bright"></i> Live tracking</span>
+                        <div class="flex items-center gap-6 flex-wrap text-xs sm:text-sm font-medium text-gray-300/90 pt-4 border-t border-white/15">
+                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Free over $40</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Same-day slots</span>
+                            <span class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Live tracking</span>
                         </div>
                     </div>
 
