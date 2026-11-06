@@ -92,6 +92,11 @@
             --color-rgb-dark: 27, 94, 32;
             --color-rgb-bright: 165, 214, 167;
             --color-rgb-accent: 249, 168, 37;
+            --color-card-bg: #EAEFEA;
+            --color-container-bg: #E3EBE3;
+            --color-border-card: rgba(46, 125, 50, 0.22);
+            --color-border-card-hover: rgba(46, 125, 50, 0.45);
+            --color-card-shadow: 0 4px 18px -2px rgba(16, 36, 26, 0.08), 0 2px 6px -1px rgba(16, 36, 26, 0.04);
         }
 
         [data-theme="market-sunset"] {
@@ -107,6 +112,19 @@
             --color-rgb-dark: 191, 54, 12;
             --color-rgb-bright: 255, 204, 128;
             --color-rgb-accent: 253, 216, 53;
+            --color-card-bg: #F4EBE3;
+            --color-container-bg: #EFE2D6;
+            --color-border-card: rgba(230, 81, 0, 0.22);
+            --color-border-card-hover: rgba(230, 81, 0, 0.45);
+            --color-card-shadow: 0 4px 18px -2px rgba(43, 20, 8, 0.08), 0 2px 6px -1px rgba(43, 20, 8, 0.04);
+        }
+
+        .dark {
+            --color-card-bg: #14201A;
+            --color-container-bg: #14201A;
+            --color-border-card: rgba(var(--color-rgb-bright), 0.15);
+            --color-border-card-hover: rgba(var(--color-rgb-bright), 0.4);
+            --color-card-shadow: none;
         }
 
         body {
@@ -418,7 +436,112 @@
             box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
         }
         [dir="rtl"] .deal-tag { left: auto; right: 12px; }
-    </style>
+    
+        /* ==========================================================================
+           LIGHT MODE CARDS & CONTAINERS VISIBILITY & CONTRAST ENHANCEMENTS
+           ========================================================================== */
+        :root:not(.dark) nav {
+            background-color: rgba(235, 241, 235, 0.96) !important;
+            border-color: rgba(var(--color-rgb-primary), 0.28) !important;
+            box-shadow: 0 10px 30px -10px rgba(16, 36, 26, 0.12) !important;
+        }
+        :root:not(.dark) .dropdown-menu > div {
+            background-color: var(--color-card-bg) !important;
+            border-color: rgba(var(--color-rgb-primary), 0.25) !important;
+            box-shadow: 0 20px 40px -10px rgba(16, 36, 26, 0.15) !important;
+        }
+        :root:not(.dark) #mobile-menu {
+            background-color: var(--color-card-bg) !important;
+            border-color: rgba(var(--color-rgb-primary), 0.25) !important;
+            box-shadow: 0 20px 40px -10px rgba(16, 36, 26, 0.15) !important;
+        }
+        :root:not(.dark) .category-card,
+        :root:not(.dark) .content-card,
+        :root:not(.dark) .product-card,
+        :root:not(.dark) .feature-card,
+        :root:not(.dark) .product-tile,
+        :root:not(.dark) .express-card,
+        :root:not(.dark) .bento-tile,
+        :root:not(.dark) .editorial-card,
+        :root:not(.dark) .team-card,
+        :root:not(.dark) .contact-card,
+        :root:not(.dark) .agent-card,
+        :root:not(.dark) .tier-card,
+        :root:not(.dark) .hub-card,
+        :root:not(.dark) .zone-card,
+        :root:not(.dark) .coupon-card,
+        :root:not(.dark) .flash-card,
+        :root:not(.dark) .stat-block,
+        :root:not(.dark) .faq-item {
+            background-color: var(--color-card-bg) !important;
+            border-color: var(--color-border-card) !important;
+            box-shadow: var(--color-card-shadow) !important;
+        }
+        :root:not(.dark) .product-card:hover,
+        :root:not(.dark) .feature-card:hover,
+        :root:not(.dark) .product-tile:hover,
+        :root:not(.dark) .express-card:hover,
+        :root:not(.dark) .bento-tile:hover,
+        :root:not(.dark) .editorial-card:hover,
+        :root:not(.dark) .team-card:hover,
+        :root:not(.dark) .contact-card:hover,
+        :root:not(.dark) .agent-card:hover,
+        :root:not(.dark) .tier-card:hover,
+        :root:not(.dark) .hub-card:hover,
+        :root:not(.dark) .zone-card:hover,
+        :root:not(.dark) .coupon-card:hover,
+        :root:not(.dark) .flash-card:hover {
+            border-color: var(--color-border-card-hover) !important;
+        }
+        :root:not(.dark) .glass-card-tilt {
+            background-color: var(--color-card-bg) !important;
+            border: 1.5px solid var(--color-border-card) !important;
+            box-shadow: 0 10px 30px -5px rgba(16, 36, 26, 0.1) !important;
+        }
+        :root:not(.dark) .search-bar,
+        :root:not(.dark) .sort-select,
+        :root:not(.dark) .form-input,
+        :root:not(.dark) .form-field {
+            background-color: var(--color-card-bg) !important;
+            border-color: rgba(var(--color-rgb-primary), 0.25) !important;
+        }
+        :root:not(.dark) .category-tab:not(.active),
+        :root:not(.dark) .filter-chip:not(.active),
+        :root:not(.dark) .category-chip:not(.active),
+        :root:not(.dark) .day-pill:not(.active) {
+            background-color: var(--color-card-bg) !important;
+            border-color: rgba(var(--color-rgb-primary), 0.22) !important;
+            box-shadow: 0 2px 6px rgba(16, 36, 26, 0.05);
+        }
+        /* Slightly darker elevated surface for white card containers */
+        :root:not(.dark) .bg-white.rounded-2xl:not(button):not(a.rounded-full):not(span),
+        :root:not(.dark) .bg-white.rounded-3xl:not(button):not(a.rounded-full):not(span),
+        :root:not(.dark) .bg-white.rounded-\[2\.5rem\],
+        :root:not(.dark) .bg-white.rounded-\[2rem\] {
+            background-color: var(--color-card-bg) !important;
+            border-color: var(--color-border-card) !important;
+            box-shadow: 0 8px 25px -5px rgba(16, 36, 26, 0.08), 0 2px 6px -1px rgba(16, 36, 26, 0.04) !important;
+        }
+        /* Boost text contrast inside cards */
+        :root:not(.dark) .product-card p,
+        :root:not(.dark) .feature-card p,
+        :root:not(.dark) .category-card p,
+        :root:not(.dark) .product-tile p,
+        :root:not(.dark) .express-card p,
+        :root:not(.dark) .bento-tile p,
+        :root:not(.dark) .editorial-card p,
+        :root:not(.dark) .contact-card p,
+        :root:not(.dark) .hub-card p,
+        :root:not(.dark) .zone-card p {
+            color: var(--color-text-dark);
+            opacity: 0.88;
+        }
+        :root:not(.dark) .product-card .border-t,
+        :root:not(.dark) .product-tile .border-t {
+            border-color: rgba(var(--color-rgb-primary), 0.2) !important;
+        }
+
+</style>
 </head>
 
 <body class="bg-bg-warm dark:bg-dark-bg text-neutral-dark dark:text-gray-200">
